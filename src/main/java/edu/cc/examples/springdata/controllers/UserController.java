@@ -62,11 +62,18 @@ public class UserController {
 		return "redirect:/";
 	}
 	
+        @GetMapping("/search")
+	public String search(User u){
+		log.info("Ejecutando método search en controlador UserController");
+                return "formCheck";
+		
+	}
+        
         @GetMapping("/check")
 	public String check(User u){
 		log.info("Ejecutando método check en controlador UserController");
 		userService.comprobarUsuario(u);
-		return "formCheck";
+		return "redirect:/";
 	}
 	
 }
