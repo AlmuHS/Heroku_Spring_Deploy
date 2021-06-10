@@ -41,6 +41,6 @@ public class UserServiceImpl implements IUserService {
     @Override
     @Transactional(readOnly = true)
     public boolean comprobarUsuario(User user) {
-        return usuarioDao == user;
+        return usuarioDao.existsById(user.getId());
     }
 }
