@@ -37,4 +37,9 @@ public class UserServiceImpl implements IUserService {
     public User findUsuario(User usuario) {
         return usuarioDao.findById(usuario.getId()).orElse(null);
     }
+
+    @Override
+    public boolean comprobarUsuario(User user) {
+        return usuarioDao.equals(user);
+    }
 }

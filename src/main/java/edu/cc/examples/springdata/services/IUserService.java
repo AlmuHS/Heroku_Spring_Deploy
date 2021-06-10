@@ -13,5 +13,7 @@ public interface IUserService {
 	public void eliminarUsuario(User user);
 	
 	public User findUsuario(User user);
+        
+        public boolean comprobarUsuario(User user);
 	
 }
