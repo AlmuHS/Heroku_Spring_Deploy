@@ -69,7 +69,7 @@ public class UserController {
 		
 	}
         
-        @GetMapping("/check")
+        @PostMapping("/check")
 	public String check(User u){
 		log.info("Ejecutando método check en controlador UserController");
 		boolean existe = userService.comprobarUsuario(u);
