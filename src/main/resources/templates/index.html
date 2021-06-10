@@ -11,6 +11,7 @@
         <p th:text="${mensaje}"></p>
 
         <p><a th:href="@{/add}">Añadir Usuario</a></p>
+        <p><a th:href="@{/check}">Comprobar Usuario</a></p>
        
        <table border="1" th:if="${usuarios!=null and !usuarios.empty}">
     	<tr>
