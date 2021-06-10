@@ -72,8 +72,12 @@ public class UserController {
         @GetMapping("/check")
 	public String check(User u){
 		log.info("Ejecutando método check en controlador UserController");
-		userService.comprobarUsuario(u);
-		return "redirect:/";
+		boolean existe = userService.comprobarUsuario(u);
+                
+                if(existe)
+                        return "userExists";
+                else
+                    return "userNotExists";
 	}
 	
 }
