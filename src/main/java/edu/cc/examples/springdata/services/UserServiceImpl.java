@@ -41,6 +41,14 @@ public class UserServiceImpl implements IUserService {
     @Override
     @Transactional(readOnly = true)
     public boolean comprobarUsuario(User user) {
-        return usuarioDao.existsById(user.getId());
+        List<User> listUsers = (List<User>) usuarioDao.findAll();
+        
+        for(User u: listUsers){
+            if(u.getNombre().equals(user.getNombre()) && u.getEmail().equals(user.getEmail())){
+                return true;
+            }
+        }
+        
+        return false;
     }
 }
