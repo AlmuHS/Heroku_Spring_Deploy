@@ -39,7 +39,8 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public boolean comprobarUsuario(User user) {
-        return usuarioDao.equals(user);
+        return usuarioDao == user;
     }
 }
