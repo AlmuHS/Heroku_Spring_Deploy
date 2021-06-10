@@ -43,10 +43,6 @@ public class UserServiceImpl implements IUserService {
     public boolean comprobarUsuario(User user) {
         List<User> listUsers = (List<User>) usuarioDao.findAll();
         
-        if (listUsers.stream().anyMatch(u -> (u.getEmail().equals(user.getEmail()) && user.getNombre().equals(u.getNombre())))) {
-            return true;
-        }
-        
-        return false;
+        return listUsers.stream().anyMatch(u -> (u.getEmail().equals(user.getEmail()) && user.getNombre().equals(u.getNombre())));
     }
 }
